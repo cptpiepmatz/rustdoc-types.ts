@@ -13,7 +13,7 @@
   "license": "MIT",
   "author": "",
   "type": "module",
-  "types": "/types/index.d.ts",
+  "types": "types/index.d.ts",
   "rustdoc-types": {
     "version": "0.35.0"
   },
