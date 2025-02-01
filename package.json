@@ -1,0 +1,25 @@
+{
+  "name": "rustdoc-types.ts",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/cptpiepmatz/rustdoc-types.ts#readme",
+  "bugs": {
+    "url": "https://github.com/cptpiepmatz/rustdoc-types.ts/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cptpiepmatz/rustdoc-types.ts.git"
+  },
+  "license": "MIT",
+  "author": "",
+  "type": "module",
+  "types": "/types/index.d.ts",
+  "scripts": {
+    "preinstall": "cargo run --bin preinstall",
+    "install": "cargo test --lib",
+    "postinstall": "cargo run --bin postinstall"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}

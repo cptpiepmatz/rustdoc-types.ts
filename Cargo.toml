@@ -1,0 +1,22 @@
+[package]
+name = "workspace"
+edition = "2021"
+
+[[bin]]
+name = "preinstall"
+path = "scripts/preinstall.rs"
+
+[[bin]]
+name = "postinstall"
+path = "scripts/postinstall.rs"
+
+[features]
+rustc-hash = [] # fake feature to suppress warning from `cargo test`
+
+[dependencies]
+serde = { version = "1.0.217", features = ["derive"] }
+flate2 = "1.0.35"
+reqwest = { version = "0.12.12", features = ["blocking"] }
+serde_json = "1.0.138"
+tar = "0.4.43"
+ts-rs = "10.1.0"
