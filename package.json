@@ -22,7 +22,7 @@
     "install": "cargo test --lib && tsc",
     "postinstall": "cargo run --bin postinstall"
   },
-  "dependencies": {
-    "typescript": "^5.7.3"
+  "peerDependencies": {
+    "typescript": ">=4.0.0"
   }
 }
