@@ -14,6 +14,6 @@ fn main() {
 
     let mut index_d_ts = File::create("types/index.d.ts").unwrap();
     for t in types.iter() {
-        writeln!(index_d_ts, "export type {{ {t} }} from \"./{t}.d.ts\";").unwrap();
+        writeln!(index_d_ts, "export type {{ {t} }} from \"./{t}.js\";").unwrap();
     }
 }
