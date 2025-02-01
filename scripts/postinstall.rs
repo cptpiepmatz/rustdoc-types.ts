@@ -1,4 +1,7 @@
-use std::{fs::{self, File}, io::Write};
+use std::{
+    fs::{self, File},
+    io::Write,
+};
 
 fn main() {
     let mut types = vec![];
@@ -9,7 +12,7 @@ fn main() {
         types.push(file_name.replace(".ts", ""));
     }
 
-    let mut index_d_ts = File::create("src/index.d.ts").unwrap();
+    let mut index_d_ts = File::create("types/index.d.ts").unwrap();
     for t in types.iter() {
         writeln!(index_d_ts, "export type {{ {t} }} from \"./{t}\";").unwrap();
     }

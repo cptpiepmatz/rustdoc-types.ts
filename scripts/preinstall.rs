@@ -1,15 +1,7 @@
-use std::{
-    fmt::Write,
-    fs,
-    io::Read,
-    ops::Deref,
-};
+use std::{fs, io::Read, ops::Deref};
 
 use flate2::read::GzDecoder;
-use reqwest::{
-    blocking::Client,
-    header::USER_AGENT,
-};
+use reqwest::{blocking::Client, header::USER_AGENT};
 use serde::Deserialize;
 use tar::Archive;
 
@@ -28,18 +20,17 @@ struct ThisPackageBugs {
 #[derive(Debug, Deserialize)]
 struct MainPackage {
     #[serde(rename = "rustdoc-types")]
-    pub rustdoc_types: Option<MainPackageRustDocTypes>,
+    pub rustdoc_types: MainPackageRustDocTypes,
 }
 
 #[derive(Debug, Deserialize)]
 struct MainPackageRustDocTypes {
-    pub version: Option<String>,
+    pub version: String,
 }
 
 const CRATE_NAME: &'static str = "rustdoc-types";
-const MAIN_PACKAGE: &'static str =
-    include_str!("D:\\Projects\\tmp\\test-rustdoc-types.ts/package.json"); // include_str!(concat!(env!("INIT_CWD"), "/package.json"));
-const THIS_PACKAGE: &'static str = include_str!("D:\\Projects\\rustdoc-types.ts\\package.json"); // include_str!(env!("npm_package_json"));
+const MAIN_PACKAGE: &'static str = include_str!(concat!(env!("INIT_CWD"), "/package.json"));
+const THIS_PACKAGE: &'static str = include_str!(env!("npm_package_json"));
 
 fn main() {
     let main_package: MainPackage = serde_json::from_str(&MAIN_PACKAGE).unwrap();
@@ -50,16 +41,10 @@ fn main() {
         this_package.name, this_package.version, this_package.bugs.url
     );
 
-    let mut download_path = String::new();
-    write!(
-        download_path,
-        "https://crates.io/api/v1/crates/{CRATE_NAME}"
-    )
-    .unwrap();
-    if let Some(version) = main_package.rustdoc_types.and_then(|config| config.version) {
-        write!(download_path, "/{version}").unwrap();
-    }
-    write!(download_path, "/download").unwrap();
+    let download_path = format!(
+        "https://crates.io/api/v1/crates/{CRATE_NAME}/{version}/download",
+        version = main_package.rustdoc_types.version
+    );
 
     let client = Client::new();
     let response = client
