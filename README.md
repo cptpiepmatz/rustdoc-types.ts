@@ -18,7 +18,8 @@
 
 **rustdoc-types.ts** lets you use the data structures from the [rustdoc-types](https://crates.io/crates/rustdoc-types) crate directly in TypeScript. When you install this package, it pulls the specified version of **rustdoc-types**, extracts the core definitions from `lib.rs`, and generates matching TypeScript bindings. This is especially handy for TypeScript projects that need to parse or handle Rust doc JSON using TypeScript types.
 
-> **Note**: To install this package, a Rust toolchain is necessary. Anyone dealing with these doc structures likely has Rust installed anyway, so it shouldn't be a huge hassle.
+> [!NOTE]  
+> To install this package, a Rust toolchain is necessary. Anyone dealing with these doc structures likely has Rust installed anyway, so it shouldn't be a huge hassle.
 
 ## Features
 - **Automatic Rust-to-TypeScript Binding Generation**: No manual copying or editing of type definitions.
@@ -40,6 +41,9 @@ Make sure Rust is installed, then run:
 ```shell
 npm install https://github.com/cptpiepmatz/rustdoc-types.ts.git
 ```
+
+> [!IMPORTANT]  
+> The first installation might take a while, as it compiles some Rust code on the fly.
 
 This triggers the generation of TypeScript bindings, using your local Rust toolchain.
 
