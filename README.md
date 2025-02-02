@@ -39,7 +39,7 @@ Before installing, define the rustdoc-types version in your package.json:
 Make sure Rust is installed, then run:
 
 ```shell
-npm install https://github.com/cptpiepmatz/rustdoc-types.ts.git
+npm install github:cptpiepmatz/rustdoc-types.ts
 ```
 
 > [!IMPORTANT]  
