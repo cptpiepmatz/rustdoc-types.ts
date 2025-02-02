@@ -13,8 +13,12 @@
   "license": "MIT",
   "author": "",
   "type": "module",
-  "types": "dist/index.d.ts",
-  "main": "dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./esm": "./dist/index.js",
+    "./commonjs": "./dist/index.cjs"
+  },
   "rustdoc-types": {
     "version": "0.35.0"
   },

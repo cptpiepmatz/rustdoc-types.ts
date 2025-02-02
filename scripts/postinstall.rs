@@ -19,6 +19,9 @@ fn main() {
         writeln!(index_d_ts, "export type {{ {t} }} from \"./types/{t}.js\";").unwrap();
     }
 
-    let content = format!("export const FORMAT_VERSION = {FORMAT_VERSION};");
-    fs::write("dist/index.js", content).unwrap();
+    let esm_content = format!("export const FORMAT_VERSION = {FORMAT_VERSION};");
+    fs::write("dist/index.js", esm_content).unwrap();
+
+    let commonjs_content = format!("exports.FORMAT_VERSION = {FORMAT_VERSION};");
+    fs::write("dist/index.cjs", commonjs_content).unwrap();
 }
