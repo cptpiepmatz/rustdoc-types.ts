@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
     "declaration": true,
     "emitDeclarationOnly": true,
     "outDir": "types",
