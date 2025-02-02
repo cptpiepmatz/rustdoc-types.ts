@@ -51,7 +51,11 @@ This triggers the generation of TypeScript bindings, using your local Rust toolc
 After installation, just import the generated types anywhere in your TypeScript project:
 
 ```ts
-import type { Crate, Item, Function } from 'rustdoc-types-ts';
+// In ESM modules:
+import type { Crate, Item, Function } from "rustdoc-types";
+
+// In CommonJS files:
+import type { Crate, Item, Function } from "rustdoc-types" with { "resolution-mode": "import" }
 
 // Use the types as you normally would.
 ```
