@@ -14,8 +14,10 @@
   "author": "",
   "type": "module",
   "types": "./dist/index.d.ts",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
   "rustdoc-types": {
     "version": "0.35.0"
   },
