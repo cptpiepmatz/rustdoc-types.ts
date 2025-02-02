@@ -15,9 +15,8 @@
   "type": "module",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./dist/index.js",
-    "./esm": "./dist/index.js",
-    "./commonjs": "./dist/index.cjs"
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
   },
   "rustdoc-types": {
     "version": "0.35.0"
