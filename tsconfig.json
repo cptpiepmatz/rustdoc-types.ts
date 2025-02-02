@@ -2,7 +2,7 @@
   "compilerOptions": {
     "declaration": true,
     "emitDeclarationOnly": true,
-    "outDir": "types",
+    "outDir": "dist/types",
     "strict": true
   },
   "include": ["bindings"]

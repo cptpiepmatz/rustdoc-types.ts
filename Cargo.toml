@@ -1,10 +1,14 @@
 [package]
-name = "workspace"
+name = "rustdoc-types-ts"
 edition = "2021"
 
 [[bin]]
 name = "preinstall"
 path = "scripts/preinstall.rs"
+
+[[bin]]
+name = "install"
+path = "scripts/install.rs"
 
 [[bin]]
 name = "postinstall"

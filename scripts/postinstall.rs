@@ -3,6 +3,8 @@ use std::{
     io::Write,
 };
 
+use rustdoc_types_ts::FORMAT_VERSION;
+
 fn main() {
     let mut types = vec![];
     for entry in fs::read_dir("bindings").unwrap() {
@@ -12,8 +14,11 @@ fn main() {
         types.push(file_name.replace(".ts", ""));
     }
 
-    let mut index_d_ts = File::create("types/index.d.ts").unwrap();
+    let mut index_d_ts = File::create("dist/index.d.ts").unwrap();
     for t in types.iter() {
-        writeln!(index_d_ts, "export type {{ {t} }} from \"./{t}.js\";").unwrap();
+        writeln!(index_d_ts, "export type {{ {t} }} from \"./types/{t}.js\";").unwrap();
     }
+
+    let content = format!("export const FORMAT_VERSION = {FORMAT_VERSION};");
+    fs::write("dist/index.js", content).unwrap();
 }

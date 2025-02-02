@@ -856,6 +856,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "719b953e2095829ee67db738b3bfa9fa368c94900df327b3f07fe6e794d2fe1f"
 
 [[package]]
+name = "rustdoc-types-ts"
+version = "0.0.0"
+dependencies = [
+ "flate2",
+ "reqwest",
+ "serde",
+ "serde_json",
+ "tar",
+ "ts-rs",
+]
+
+[[package]]
 name = "rustix"
 version = "0.38.44"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1557,18 +1569,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3268f3d866458b787f390cf61f4bbb563b922d091359f9608842999eaee3943c"
 dependencies = [
  "bitflags",
-]
-
-[[package]]
-name = "workspace"
-version = "0.0.0"
-dependencies = [
- "flate2",
- "reqwest",
- "serde",
- "serde_json",
- "tar",
- "ts-rs",
 ]
 
 [[package]]

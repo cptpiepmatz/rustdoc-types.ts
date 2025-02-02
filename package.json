@@ -13,13 +13,14 @@
   "license": "MIT",
   "author": "",
   "type": "module",
-  "types": "types/index.d.ts",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
   "rustdoc-types": {
     "version": "0.35.0"
   },
   "scripts": {
     "preinstall": "cargo run --bin preinstall",
-    "install": "cargo test --lib && tsc",
+    "install": "cargo test --lib && cargo run --bin install && tsc",
     "postinstall": "cargo run --bin postinstall"
   },
   "peerDependencies": {
