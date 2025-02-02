@@ -21,7 +21,10 @@ fn main() {
     }
 
     let esm_content = format!("export const FORMAT_VERSION = {FORMAT_VERSION};");
-    fs::write("dist/index.js", esm_content).unwrap();
+    fs::write("dist/index.js", &esm_content).unwrap();
+
+    // allows type-checking the `FORMAT_VERSION` constant
+    fs::write("dist/index.d.cts", esm_content).unwrap();
 
     let commonjs_content = format!("exports.FORMAT_VERSION = {FORMAT_VERSION};");
     fs::write("dist/index.cjs", commonjs_content).unwrap();
