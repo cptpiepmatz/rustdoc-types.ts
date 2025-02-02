@@ -15,6 +15,7 @@ fn main() {
     }
 
     let mut index_d_ts = File::create("dist/index.d.ts").unwrap();
+    writeln!(index_d_ts, "declare module \"rustdoc-types.ts\";").unwrap();
     for t in types.iter() {
         writeln!(index_d_ts, "export type {{ {t} }} from \"./types/{t}.js\";").unwrap();
     }
