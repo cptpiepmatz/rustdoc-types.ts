@@ -52,11 +52,11 @@ After installation, just import the generated types anywhere in your TypeScript 
 
 ```ts
 // In ESM modules:
-import { Crate, Item, Function, FORMAT_VERSIOn } from "rustdoc-types";
+import { Crate, Item, Function, FORMAT_VERSIOn } from "rustdoc-types.ts";
 
 // In CommonJS files:
-import type { Crate, Item, Function } from "rustdoc-types" with { "resolution-mode": "import" };
-import { FORMAT_VERSION } from "rustdoc-types";
+import type { Crate, Item, Function } from "rustdoc-types.ts" with { "resolution-mode": "import" };
+import { FORMAT_VERSION } from "rustdoc-types.ts";
 
 // Use the types as you normally would.
 ```
